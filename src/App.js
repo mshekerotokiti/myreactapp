@@ -24,9 +24,18 @@
 
 // export default App;
 
-import React from 'react';
+import React, { useState } from 'react';
 
 function App (){
+  //Declare React State to store the count value
+const [clicks, setCount] = useState(0);
+
+// Javascript Function to increment count
+const incrementCount = () => {
+  alert(`You clicked this button ${clicks} times`)
+  setCount(clicks + 1);
+}
+
     return (
       <div>
         <img className='center'
@@ -35,7 +44,7 @@ function App (){
         <p> This is an image of Tokiti's Kitchen logo</p>
 
         <div>
-          <button onClick={() => alert("You clicked this button")}
+          <button onClick={incrementCount}
           style = {{color: "blue"}}
           >Click me!</button>
 
